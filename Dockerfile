@@ -10,7 +10,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM registry.svc.ci.openshift.org/openshift/release:golang-1.13 AS builder
+FROM hoecprvnex01.na.xom.com:6969/openshift/origin-release:golang-1.13 AS builder
 
 ARG version 
 ARG release 
@@ -30,7 +30,7 @@ COPY . .
 RUN git --version 
 RUN make build
 
-FROM registry.svc.ci.openshift.org/openshift/origin-v4.0:base
+FROM hoecprvnex01.na.xom.com:6969/openshift/origin-v4.0:base
 
 COPY --from=builder /go/cluster-api-provider-ovirt/bin/manager /
 COPY --from=builder /go/cluster-api-provider-ovirt/bin/machine-controller-manager /
