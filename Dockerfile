@@ -30,7 +30,7 @@ COPY . .
 RUN git --version 
 RUN make build
 
-FROM hoecprvnex01.na.xom.com:6969/openshift/origin-v4.0:base
+FROM hoecprvnex01.na.xom.com:6969/openshift/origin-base:v4.0
 
 COPY --from=builder /go/cluster-api-provider-ovirt/bin/manager /
 COPY --from=builder /go/cluster-api-provider-ovirt/bin/machine-controller-manager /
